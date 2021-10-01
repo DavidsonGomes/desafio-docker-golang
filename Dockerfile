@@ -11,7 +11,7 @@ COPY main.go .
 
 RUN go build
 
-FROM alpine:3.14
+FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 COPY --from=builder /code/rocks ./
 CMD ["./rocks"] 
